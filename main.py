@@ -100,7 +100,29 @@ def main():
                 output_handler.print_error("Ein Fehler ist aufgetreten.")
                 logger.error("Ein Fehler ist aufgetreten: %s", str(e))
 
-        elif choice == 5:  # Autor anlegen
+        elif choice == 5:  # Buch suchen
+            table_name = "buch"  # Replace with the appropriate table name
+            column = input_handler.get_non_empty_input("Geben Sie den Spaltennamen ein: ")
+            value = input_handler.get_non_empty_input("Geben Sie den Suchwert ein: ")
+            query, params = buch_query.search(table_name, column, value)
+            try:
+                cursor = db.connection.cursor()
+                cursor.execute(query, params)
+                rows = cursor.fetchall()
+
+                # Handle the output
+                if len(rows) == 0:
+                    output_handler.print_error("No matching records found.")
+                else:
+                    output_handler.print_success("Matching records:")
+                    for row in rows:
+                        output_handler.print_success(row)
+            except Exception as e:
+                db.connection.rollback()
+                output_handler.print_error("Ein Fehler ist aufgetreten.")
+                logger.error("Ein Fehler ist aufgetreten: %s", str(e))
+
+        elif choice == 6:  # Autor anlegen
             data = input_handler.get_autor_data()
             query, params = autor_query.insert(data)
             try:
@@ -114,7 +136,7 @@ def main():
                 output_handler.print_error("Ein Fehler ist aufgetreten.")
                 logger.error("Ein Fehler ist aufgetreten: %s", str(e))
 
-        elif choice == 6:  # Autor löschen
+        elif choice == 7:  # Autor löschen
             autor_name = input_handler.get_non_empty_input("Geben Sie den Namen des zu löschenden Autors ein: ")
             query, params = autor_query.delete(f"name = '{autor_name}'")
             try:
@@ -128,7 +150,7 @@ def main():
                 output_handler.print_error("Ein Fehler ist aufgetreten.")
                 logger.error("Ein Fehler ist aufgetreten: %s", str(e))
         
-        elif choice == 7:  # Verlag anlegen
+        elif choice == 8:  # Verlag anlegen
             data = input_handler.get_distributioner_data()
             query, params = verlag_query.insert(data)
             try:
@@ -142,7 +164,7 @@ def main():
                 output_handler.print_error("Ein Fehler ist aufgetreten.")
                 logger.error("Ein Fehler ist aufgetreten: %s", str(e))
 
-        elif choice == 8:  # Verlag löschen
+        elif choice == 9:  # Verlag löschen
             verlag_name = input_handler.get_non_empty_input("Geben Sie den Namen des zu löschenden Verlags ein: ")
             query, params = verlag_query.delete(f"name = '{verlag_name}'")
             try:
@@ -156,7 +178,7 @@ def main():
                 output_handler.print_error("Ein Fehler ist aufgetreten.")
                 logger.error("Ein Fehler ist aufgetreten: %s", str(e))
 
-        elif choice == 9:  # Menüeintrag anlegen
+        elif choice == 10:  # Menüeintrag anlegen
             data = input_handler.get_menu_data()
             query, params = menue_query.insert(data)
             try:
@@ -170,7 +192,7 @@ def main():
                 output_handler.print_error("Ein Fehler ist aufgetreten.")
                 logger.error("Ein Fehler ist aufgetreten: %s", str(e))
 
-        elif choice == 10:  # Menüeintrag löschen
+        elif choice == 11:  # Menüeintrag löschen
             menu_name = input_handler.get_non_empty_input("Geben Sie den Namen des zu löschenden Menüeintrags ein: ")
             query, params = menue_query.delete(f"name = '{menu_name}'")
             try:
@@ -184,7 +206,7 @@ def main():
                 output_handler.print_error("Ein Fehler ist aufgetreten.")
                 logger.error("Ein Fehler ist aufgetreten: %s", str(e))
 
-        elif choice == 11:  # Reservierung anlegen
+        elif choice == 12:  # Reservierung anlegen
             data = input_handler.get_reservation_data()
             query, params = reservierung_query.insert(data)
             try:
@@ -198,7 +220,7 @@ def main():
                 output_handler.print_error("Ein Fehler ist aufgetreten.")
                 logger.error("Ein Fehler ist aufgetreten: %s", str(e))
         
-        elif choice == 12:  # Reservierung löschen
+        elif choice == 13:  # Reservierung löschen
             reservierung_id = input_handler.get_integer_input("Geben Sie die ID der zu löschenden Reservierung ein: ")
             query, params = reservierung_query.delete(f"id = {reservierung_id}")
             try:

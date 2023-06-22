@@ -36,3 +36,13 @@ LINE 1: INSERT INTO "buch" ("nummer", "titel") VALUES (1, 'title');
 2023-06-21 17:13:16,893:ERROR:Ein Fehler ist aufgetreten: cannot access local variable 'query' where it is not associated with a value
 2023-06-21 17:13:34,335:ERROR:Ein Fehler ist aufgetreten: cannot access local variable 'query' where it is not associated with a value
 2023-06-21 17:16:28,092:ERROR:Ein Fehler ist aufgetreten: cannot access local variable 'query' where it is not associated with a value
+2023-06-22 20:10:19,677:ERROR:Ein Fehler ist aufgetreten: operator does not exist: integer ~~ unknown
+LINE 1: SELECT * FROM "buch" WHERE "nummer" LIKE '%1%'
+                                            ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+2023-06-22 20:12:55,325:ERROR:Ein Fehler ist aufgetreten: operator does not exist: integer ~~ unknown
+LINE 1: SELECT * FROM "buch" WHERE "nummer" LIKE '%1%'
+                                            ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+

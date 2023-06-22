@@ -41,7 +41,9 @@ class Query:
         )
         return stmt, []
 
-    def search(self, column, value):
-        query = sql.SQL("SELECT * FROM {} WHERE {} LIKE %s").format(self.table_name, sql.Identifier(column))
-        params = (f"%{value}%",)
+    def search(self, table_name, column, value):
+        query = sql.SQL("SELECT * FROM {} WHERE {} = %s").format(
+            sql.Identifier(table_name), sql.Identifier(column)
+        )
+        params = (value,)
         return query, params
