@@ -1,0 +1,38 @@
+2023-06-21 16:06:25,247:ERROR:Ein Fehler ist aufgetreten: column "Titel" of relation "buch" does not exist
+LINE 1: INSERT INTO "buch" ("nummer", "Titel") VALUES (1, 'neue Buch...
+                                      ^
+
+2023-06-21 16:08:11,634:ERROR:Ein Fehler ist aufgetreten: column "titel" of relation "buch" does not exist
+LINE 1: INSERT INTO "buch" ("nummer", "titel") VALUES (1, 'Titel');
+                                      ^
+
+2023-06-21 16:10:09,611:ERROR:Ein Fehler ist aufgetreten: column "titel" of relation "buch" does not exist
+LINE 1: INSERT INTO "buch" ("nummer", "titel") VALUES (1, 'title');
+                                      ^
+
+2023-06-21 16:13:55,286:INFO:Buch erfolgreich angelegt.
+2023-06-21 16:14:08,501:INFO:Buch erfolgreich angelegt.
+2023-06-21 16:14:31,272:INFO:Buch erfolgreich gelöscht.
+2023-06-21 16:16:43,706:INFO:Autor erfolgreich angelegt.
+2023-06-21 16:17:10,113:ERROR:Ein Buch mit dieser Nummer existiert bereits.
+2023-06-21 16:18:38,662:INFO:Autor erfolgreich gelöscht.
+2023-06-21 16:18:54,058:INFO:Mitarbeiter erfolgreich angelegt.
+2023-06-21 16:19:06,221:INFO:Autor erfolgreich angelegt.
+2023-06-21 16:19:15,845:INFO:Menüeintrag erfolgreich angelegt.
+2023-06-21 16:20:01,657:INFO:Reservierung erfolgreich angelegt.
+2023-06-21 16:45:43,133:INFO:Buch wurde bearbeitet
+2023-06-21 16:53:56,676:ERROR:Ein Buch mit dieser Nummer existiert bereits.
+2023-06-21 16:54:01,042:ERROR:Ein Fehler ist aufgetreten: current transaction is aborted, commands ignored until end of transaction block
+
+2023-06-21 16:54:28,661:ERROR:Ein Fehler ist aufgetreten: current transaction is aborted, commands ignored until end of transaction block
+
+2023-06-21 16:56:10,427:ERROR:Ein Buch mit dieser Nummer existiert bereits.
+2023-06-21 16:56:12,633:ERROR:Ein Buch mit dieser Nummer existiert bereits.
+2023-06-21 16:56:14,429:ERROR:Ein Buch mit dieser Nummer existiert bereits.
+2023-06-21 16:56:17,345:INFO:Buch erfolgreich angelegt.
+2023-06-21 16:56:20,510:INFO:Buch wurde bearbeitet
+2023-06-21 16:56:36,359:INFO:Buch wurde bearbeitet
+2023-06-21 16:56:38,586:INFO:Buch wurde bearbeitet
+2023-06-21 17:13:16,893:ERROR:Ein Fehler ist aufgetreten: cannot access local variable 'query' where it is not associated with a value
+2023-06-21 17:13:34,335:ERROR:Ein Fehler ist aufgetreten: cannot access local variable 'query' where it is not associated with a value
+2023-06-21 17:16:28,092:ERROR:Ein Fehler ist aufgetreten: cannot access local variable 'query' where it is not associated with a value
