@@ -27,7 +27,6 @@ class Reservierung(Table):
                                           "FOREIGN KEY(autor_id) REFERENCES autor(id)",
                                           "FOREIGN KEY(buch_id) REFERENCES buch(id)"])
 
-
 class Menue(Table):
     def __init__(self):
         super().__init__("menue", ["id SERIAL PRIMARY KEY", "name VARCHAR(100)", "preis DECIMAL"])

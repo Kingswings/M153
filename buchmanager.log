@@ -46,3 +46,4 @@ LINE 1: SELECT * FROM "buch" WHERE "nummer" LIKE '%1%'
                                             ^
 HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
 
+2023-06-23 09:53:33,343:INFO:Book created successfully.
