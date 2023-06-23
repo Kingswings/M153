@@ -15,8 +15,7 @@ BookManager
 │   ├── __init__.py
 │   ├── db.py
 │   ├── models.py
-│   └── queries.py
-├── logs
+│   └── queries.py  
 ├── venv
 ├── config.py
 ├── buchmanager.log
