@@ -33,14 +33,15 @@ def main():
             3: update_book,
             4: search_book_by_condition,
             5: search_book_by_column_value,
-            6: create_author,
-            7: delete_author,
-            8: create_publisher,
-            9: delete_publisher,
-            10: create_menu_entry,
-            11: delete_menu_entry,
-            12: create_reservation,
-            13: delete_reservation,
+            6: show_all_books,  # Added option to show all books
+            7: create_author,
+            8: delete_author,
+            9: create_publisher,
+            10: delete_publisher,
+            11: create_menu_entry,
+            12: delete_menu_entry,
+            13: create_reservation,
+            14: delete_reservation,
         }
 
         # Execute the selected choice from the switch statement
@@ -267,6 +268,25 @@ def delete_reservation(db, input_handler, output_handler, buch_query, autor_quer
         db.connection.commit()
         output_handler.print_success("Reservation deleted successfully.")
         logger.info("Reservation deleted successfully.")
+    except Exception as e:
+        db.connection.rollback()
+        output_handler.print_error("An error occurred.")
+        logger.error("An error occurred: %s", str(e))
+
+def show_all_books(db, input_handler, output_handler, buch_query, autor_query, verlag_query, menue_query, reservierung_query):
+    query, params = buch_query.create_select_all_query()  # Use the select all query for books
+    try:
+        cursor = db.connection.cursor()
+        cursor.execute(query, params)
+        rows = cursor.fetchall()
+
+        # Handle the output
+        if len(rows) == 0:
+            output_handler.print_error("No books found.")
+        else:
+            output_handler.print_success("All books:")
+            for row in rows:
+                output_handler.print_success(row)
     except Exception as e:
         db.connection.rollback()
         output_handler.print_error("An error occurred.")
