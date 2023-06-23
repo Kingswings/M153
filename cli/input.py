@@ -51,16 +51,17 @@ class UserInputHandler:
         kontakt = self.get_non_empty_input("Enter the author's contact information: ")
         return {"name": name, "kontakt": kontakt}
 
-    def get_distributioner_data(self):
-        name = self.get_non_empty_input("Enter the employee's name: ")
-        position = self.get_non_empty_input("Enter the employee's position: ")
-        salary = self.get_integer_input("Enter the employee's salary: ")
-        return {"name": name, "stellung": position, "gehalt": salary}
+    def get_publisher_data(self):
+        name = self.get_non_empty_input("Enter the distributioner's name: ")
+        position = self.get_non_empty_input("Enter the distributioner's position: ")
+        buch_id = self.get_integer_input("Enter the book ID for the reservation: ")
+        return {"name": name, "stellung": position, "buch_id": buch_id}
 
     def get_menu_data(self):
         name = self.get_non_empty_input("Enter the menu item name: ")
         preis = self.get_integer_input("Enter the menu item price: ")
-        return {"name": name, "preis": preis}
+        buch_id = self.get_integer_input("Enter the book ID for the reservation: ")
+        return {"name": name, "preis": preis, "buch_id": buch_id}
 
     def get_reservation_data(self):
         autor_id = self.get_integer_input("Enter the author ID for the reservation: ")

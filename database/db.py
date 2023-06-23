@@ -34,7 +34,7 @@ class Database:
                 id SERIAL PRIMARY KEY,
                 name VARCHAR(255) NOT NULL,
                 stellung VARCHAR(255),
-                gehalt DECIMAL
+                buch_id INT REFERENCES buch(id)
             );
         """)
         cursor.execute("""
@@ -49,7 +49,8 @@ class Database:
             CREATE TABLE IF NOT EXISTS menue (
                 id SERIAL PRIMARY KEY,
                 name VARCHAR(255) NOT NULL,
-                preis DECIMAL NOT NULL
+                preis DECIMAL NOT NULL,
+                buch_id INT REFERENCES buch(id)
             );
         """)
         self.connection.commit()

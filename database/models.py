@@ -18,7 +18,8 @@ class Autor(Table):
 
 class Verlag(Table):
     def __init__(self):
-        super().__init__("verlag", ["id SERIAL PRIMARY KEY", "name VARCHAR(100)", "position VARCHAR(50)"])
+        super().__init__("verlag", ["id SERIAL PRIMARY KEY", "name VARCHAR(100)", "position VARCHAR(50), buch_id",
+                                    "FOREIGN KEY(buch_id) REFERENCES buch(id)"])
 
 
 class Reservierung(Table):
@@ -29,4 +30,5 @@ class Reservierung(Table):
 
 class Menue(Table):
     def __init__(self):
-        super().__init__("menue", ["id SERIAL PRIMARY KEY", "name VARCHAR(100)", "preis DECIMAL"])
+        super().__init__("menue", ["id SERIAL PRIMARY KEY", "name VARCHAR(100)", "preis DECIMAL", "buch_id"
+                                    "FOREIGN KEY(buch_id) REFERENCES buch(id)"])

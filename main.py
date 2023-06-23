@@ -155,7 +155,7 @@ def search_book_by_column_value(db, input_handler, output_handler, buch_query, a
 
 
 def create_author(db, input_handler, output_handler, buch_query, autor_query, verlag_query, menue_query, reservierung_query):
-    data = input_handler.get_author_data()
+    data = input_handler.get_autor_data()
     query, params = autor_query.create_insert_query(data)
     try:
         cursor = db.connection.cursor()

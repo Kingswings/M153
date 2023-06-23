@@ -55,3 +55,9 @@ LINE 1: SELECT * FROM "buch" WHERE "1" = '1'
                                    ^
 
 2023-06-23 10:23:50,664:INFO:Book created successfully.
+2023-06-23 13:50:14,747:INFO:Book created successfully.
+2023-06-23 13:50:24,964:INFO:Book deleted successfully.
+2023-06-23 13:50:45,117:INFO:Book updated.
+2023-06-23 14:09:50,018:INFO:Book created successfully.
+2023-06-23 14:10:56,599:INFO:Author created successfully.
+2023-06-23 14:12:12,378:INFO:Publisher created successfully.
