@@ -1,20 +1,21 @@
 # output.py
+from pprint import pprint
 
 class UserOutputHandler:
 
     @staticmethod
     def print_message(message):
-        print(message)
+        pprint(message)
 
     @staticmethod
     def print_table(table_data):
         for row in table_data:
-            print(row)
+            pprint(row)
 
     @staticmethod
     def print_error(error_message):
-        print("Fehler: ", error_message)
+        pprint(error_message)
 
     @staticmethod
     def print_success(success_message):
-        print("Erfolg: ", success_message)
+        pprint(success_message)

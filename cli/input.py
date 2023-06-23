@@ -1,4 +1,5 @@
 # input.py
+from pprint import pprint
 
 class UserInputHandler:
 
@@ -12,7 +13,7 @@ class UserInputHandler:
             if value.isdigit():
                 return int(value)
             else:
-                print("Ungültige Eingabe, bitte geben Sie eine Zahl ein.")
+                pprint("Invalid input, please enter a number.")
 
     def get_non_empty_input(self, prompt):
         while True:
@@ -20,50 +21,50 @@ class UserInputHandler:
             if value:
                 return value
             else:
-                print("Ungültige Eingabe, bitte geben Sie einen Wert ein.")
+                pprint("Invalid input, please enter a value.")
 
     def get_menu_choice(self):
-        print("1. Buch anlegen")
-        print("2. Buch löschen")
-        print("3. Buch bearbeiten")
-        print("4. Buch filtern")
-        print("5. Buch suchen nach nummer")
-        print("6. Alle Bücher anzeigen")
-        print("7. Autor anlegen")
-        print("8. Autor löschen")
-        print("9. Verlag anlegen")
-        print("10. Verlag löschen")
-        print("11. Menüeintrag anlegen")
-        print("12. Menüeintrag löschen")
-        print("13. Reservierung anlegen")
-        print("14. Reservierung löschen")
+        pprint("1. Create book")
+        pprint("2. Delete book")
+        pprint("3. Edit book")
+        pprint("4. Filter books")
+        pprint("5. Search book by number")
+        pprint("6. Show all books")
+        pprint("7. Create author")
+        pprint("8. Delete author")
+        pprint("9. Create publisher")
+        pprint("10. Delete publisher")
+        pprint("11. Create menu item")
+        pprint("12. Delete menu item")
+        pprint("13. Create reservation")
+        pprint("14. Delete reservation")
         # ...weitere Optionen...
-        return self.get_integer_input("Wählen Sie eine Option aus: ")
+        return self.get_integer_input("Select an option: ")
 
     def get_book_data(self):
-        nummer = self.get_integer_input("Geben Sie die Buchnummer ein: ")
-        title = self.get_non_empty_input("Geben Sie Ttel ein: ")
+        nummer = self.get_integer_input("Enter the book number: ")
+        title = self.get_non_empty_input("Enter the title: ")
         return {"nummer": nummer, "titel": title}
 
     def get_autor_data(self):
-        name = self.get_non_empty_input("Geben Sie den Namen des Autors ein: ")
-        kontakt = self.get_non_empty_input("Geben Sie die Kontaktinformationen des Autors ein: ")
+        name = self.get_non_empty_input("Enter the author's name: ")
+        kontakt = self.get_non_empty_input("Enter the author's contact information: ")
         return {"name": name, "kontakt": kontakt}
 
     def get_distributioner_data(self):
-        name = self.get_non_empty_input("Geben Sie den Namen des Mitarbeiters ein: ")
-        position = self.get_non_empty_input("Geben Sie die Position des Mitarbeiters ein: ")
-        salary = self.get_integer_input("Geben Sie das Gehalt des Mitarbeiters ein: ")
+        name = self.get_non_empty_input("Enter the employee's name: ")
+        position = self.get_non_empty_input("Enter the employee's position: ")
+        salary = self.get_integer_input("Enter the employee's salary: ")
         return {"name": name, "stellung": position, "gehalt": salary}
 
     def get_menu_data(self):
-        name = self.get_non_empty_input("Geben Sie den Namen des Menüeintrags ein: ")
-        preis = self.get_integer_input("Geben Sie den Preis des Menüeintrags ein: ")
+        name = self.get_non_empty_input("Enter the menu item name: ")
+        preis = self.get_integer_input("Enter the menu item price: ")
         return {"name": name, "preis": preis}
 
     def get_reservation_data(self):
-        autor_id = self.get_integer_input("Geben Sie die Autor-ID für die Reservierung ein: ")
-        buch_id = self.get_integer_input("Geben Sie die Buch-ID für die Reservierung ein: ")
-        datum = self.get_non_empty_input("Geben Sie das Datum der Reservierung ein (Format: JJJJ-MM-TT): ")
+        autor_id = self.get_integer_input("Enter the author ID for the reservation: ")
+        buch_id = self.get_integer_input("Enter the book ID for the reservation: ")
+        datum = self.get_non_empty_input("Enter the reservation date (Format: YYYY-MM-DD): ")
         return {"autor_id": autor_id, "buch_id": buch_id, "datum": datum}
 
